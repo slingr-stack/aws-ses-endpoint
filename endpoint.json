@@ -1,0 +1,52 @@
+{
+  "label": "AWS SES",
+  "name": "aws-ses",
+  "apiVersion": "v1",
+  "internal": false,
+  "configurationType": "GLOBAL",
+  "deployment": {
+    "profiles":[
+      {
+        "name": "default",
+        "label": "Default",
+        "memory": 256,
+        "description": "Default configuration"
+      }
+    ],
+    "allowMultipleInstances": true
+  },
+  "icon48": "https://storage.googleapis.com/static.slingrs.io/platform/endpoints/aws-ses.png",
+  "status": "ACTIVE",
+  "stores": [],
+  "events": [],
+  "functions": [
+    {
+      "label": "Request using AWS SDK",
+      "name": "_requestAwsSdk"
+    }
+  ],
+  "scripts":[
+    "functions.js",
+    "ses-helpers.js"
+  ],
+  "configuration":[
+    {
+      "name": "accessKey",
+      "label": "AWS Access Key",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "secretAccessKey",
+      "label": "AWS Secret Access Key",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "region",
+      "label": "AWS Region",
+      "type": "text",
+      "required": true
+    }
+  ]
+}
