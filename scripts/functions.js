@@ -1027,6 +1027,13 @@ endpoint.options = function(url, httpOptions, callbackData, callbacks) {
     return endpoint._options(options, callbackData, callbacks);
 };
 
+endpoint.encode = function (obj) {
+    if (typeof obj === 'object') {
+        return encodeURIComponent(JSON.stringify(obj));
+    }
+    return encodeURI(obj);
+};
+
 endpoint.utils = {};
             
 endpoint.utils.parseTimestamp = function(dateString) {
