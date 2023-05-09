@@ -59,6 +59,9 @@
               "label": "POST /v2/email/outbound-custom-verification-emails"
             },
             {
+              "label": "POST /v2/email/outbound-emails"
+            },
+            {
               "label": "POST /v2/email/tags"
             },
             {

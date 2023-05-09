@@ -114,6 +114,8 @@ endpoint.email.outboundBulkEmails = {};
 
 endpoint.email.outboundCustomVerificationEmails = {};
 
+endpoint.email.outboundEmails = {};
+
 endpoint.email.templates.render = {};
 
 endpoint.email.metrics.batch.post = function(httpOptions) {
@@ -883,6 +885,13 @@ endpoint.email.outboundBulkEmails.put = function(httpOptions) {
 
 endpoint.email.outboundCustomVerificationEmails.post = function(httpOptions) {
     var url = parse('/v2/email/outbound-custom-verification-emails');
+    sys.logs.debug('[awsSes] POST from: ' + url);
+    var options = checkHttpOptions(url, httpOptions);
+    return endpoint._post(options);
+};
+
+endpoint.email.outboundEmails.post = function(httpOptions) {
+    var url = parse('/v2/email/outbound-emails');
     sys.logs.debug('[awsSes] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);

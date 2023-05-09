@@ -174,12 +174,12 @@ The Javascript API of the awsSes endpoint has three pieces:
 ## HTTP requests
 You can make `POST`,`DELETE`,`GET`,`PUT` requests to the [awsSes API](API_URL_HERE) like this:
 ```javascript
-var response = app.endpoints.awsSes.post('/v2/email/import-jobs', body)
-var response = app.endpoints.awsSes.post('/v2/email/import-jobs')
-var response = app.endpoints.awsSes.delete('/v2/email/dedicated-ip-pools/:PoolName')
-var response = app.endpoints.awsSes.get('/v2/email/templates')
-var response = app.endpoints.awsSes.put('/v2/email/identities/:EmailIdentity/mail-from', body)
-var response = app.endpoints.awsSes.put('/v2/email/identities/:EmailIdentity/mail-from')
+var response = app.endpoints.awsSes.post('/v2/email/outbound-emails', body)
+var response = app.endpoints.awsSes.post('/v2/email/outbound-emails')
+var response = app.endpoints.awsSes.delete('/v2/email/templates/:TemplateName')
+var response = app.endpoints.awsSes.get('/v2/email/deliverability-dashboard')
+var response = app.endpoints.awsSes.put('/v2/email/configuration-sets/:ConfigurationSetName/tracking-options', body)
+var response = app.endpoints.awsSes.put('/v2/email/configuration-sets/:ConfigurationSetName/tracking-options')
 ```
 
 Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
@@ -281,6 +281,12 @@ app.endpoints.awsSes.email.account.details.post(body)
 * HTTP Method: 'POST'
 ```javascript
 app.endpoints.awsSes.email.outboundCustomVerificationEmails.post(body)
+```
+---
+* API URL: '/v2/email/outbound-emails'
+* HTTP Method: 'POST'
+```javascript
+app.endpoints.awsSes.email.outboundEmails.post(body)
 ```
 ---
 * API URL: '/v2/email/tags'
@@ -755,7 +761,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>
             The url to which this endpoint will send the request. This is the exact service to which the http request will be made. <br>
             Possible values are: <br>
-            <i><strong>/v2/email/metrics/batch<br>/v2/email/configuration-sets<br>/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations<br>/v2/email/contact-lists/{ContactListName}/contacts<br>/v2/email/contact-lists<br>/v2/email/custom-verification-email-templates<br>/v2/email/dedicated-ip-pools<br>/v2/email/deliverability-dashboard/test<br>/v2/email/identities<br>/v2/email/identities/{EmailIdentity}/policies/{PolicyName}<br>/v2/email/templates<br>/v2/email/import-jobs<br>/v2/email/vdm/recommendations<br>/v2/email/account/details<br>/v2/email/outbound-custom-verification-emails<br>/v2/email/tags<br>/v2/email/templates/{TemplateName}/render<br>/v2/email/configuration-sets/{ConfigurationSetName}<br>/v2/email/configuration-sets/{ConfigurationSetName}/eventdestinations/{EventDestinationName}<br>/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}<br>/v2/email/contact-lists/{ContactListName}<br>/v2/email/custom-verification-email-templates/{TemplateName}<br>/v2/email/dedicated-ip-pools/{PoolName}<br>/v2/email/identities/{EmailIdentity}<br>/v2/email/identities/{EmailIdentity}/policies/{PolicyName}<br>/v2/email/templates/{TemplateName}<br>/v2/email/suppression/addresses/{EmailAddress}<br>/v2/email/tags<br>/v2/email/account<br>/v2/email/deliverability-dashboard/blacklist-report<br>/v2/email/configuration-sets/ConfigurationSetName<br>/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations<br>/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}<br>/v2/email/contact-lists/{ContactListName}/contacts<br>/v2/email/contact-lists/{ContactListName}<br>/v2/email/contact-lists<br>/v2/email/custom-verification-email-templates/{TemplateName}<br>/v2/email/custom-verification-email-templates<br>/v2/email/dedicated-ips/{IP}<br>/v2/email/dedicated-ips<br>/v2/email/dedicated-ip-pools/{PoolName}<br>/v2/email/dedicated-ip-pools<br>/v2/email/deliverability-dashboard<br>/v2/email/deliverability-dashboard/test-reports/{ReportId}<br>/v2/email/deliverability-dashboard/test-reports<br>/v2/email/deliverability-dashboard/campaigns/{CampaignId}<br>/v2/email/deliverability-dashboard/statistics-report/{Domain}<br>/v2/email/identities/{EmailIdentity}<br>/v2/email/identities<br>/v2/email/identities/{EmailIdentity}/policies<br>/v2/email/templates/{TemplateName}<br>/v2/email/templates<br>/v2/email/import-jobs/{JobId}<br>/v2/email/import-jobs<br>/v2/email/suppression/addresses/{EmailAddress}<br>/v2/email/suppression/addresses<br>/v2/email/configuration-sets<br>/v2/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns<br>/v2/email/tags<br>/v2/email/account/dedicated-ips/warmup<br>/v2/email/account/sending<br>/v2/email/account/suppression<br>/v2/email/account/vdm<br>/v2/email/configuration-sets/{ConfigurationSetName}/delivery-options<br>/v2/email/configuration-sets/{ConfigurationSetName}/reputation-options<br>/v2/email/configuration-sets/{ConfigurationSetName}/sending<br>/v2/email/configuration-sets/{ConfigurationSetName}/suppression-options<br>/v2/email/configuration-sets/{ConfigurationSetName}/tracking-options<br>/v2/email/configuration-sets/{ConfigurationSetName}/vdm-options<br>/v2/email/dedicated-ips/{IP}/pool<br>/v2/email/dedicated-ips/{IP}/warmup<br>/v2/email/deliverability-dashboard<br>/v2/email/identities/{EmailIdentity}/configuration-set<br>/v2/email/identities/{EmailIdentity}/dkim<br>/v1/email/identities/EmailIdentity/dkim/signing<br>/v2/email/identities/{EmailIdentity}/feedback<br>/v2/email/identities/{EmailIdentity}/mail-from<br>/v2/email/suppression/addresses<br>/v2/email/outbound-bulk-emails<br>/v2/email/configuration-sets/{ConfigurationSetName}/eventdestinations/{EventDestinationName}<br>/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}<br>/v2/email/contact-lists/{ContactListName}<br>/v2/email/custom-verification-email-templates/{TemplateName}<br>/v2/email/identities/{EmailIdentity}/policies/{PolicyName}<br>/v2/email/templates/{TemplateName}<br></strong></i>
+            <i><strong>/v2/email/metrics/batch<br>/v2/email/configuration-sets<br>/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations<br>/v2/email/contact-lists/{ContactListName}/contacts<br>/v2/email/contact-lists<br>/v2/email/custom-verification-email-templates<br>/v2/email/dedicated-ip-pools<br>/v2/email/deliverability-dashboard/test<br>/v2/email/identities<br>/v2/email/identities/{EmailIdentity}/policies/{PolicyName}<br>/v2/email/templates<br>/v2/email/import-jobs<br>/v2/email/vdm/recommendations<br>/v2/email/account/details<br>/v2/email/outbound-custom-verification-emails<br>/v2/email/outbound-emails<br>/v2/email/tags<br>/v2/email/templates/{TemplateName}/render<br>/v2/email/configuration-sets/{ConfigurationSetName}<br>/v2/email/configuration-sets/{ConfigurationSetName}/eventdestinations/{EventDestinationName}<br>/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}<br>/v2/email/contact-lists/{ContactListName}<br>/v2/email/custom-verification-email-templates/{TemplateName}<br>/v2/email/dedicated-ip-pools/{PoolName}<br>/v2/email/identities/{EmailIdentity}<br>/v2/email/identities/{EmailIdentity}/policies/{PolicyName}<br>/v2/email/templates/{TemplateName}<br>/v2/email/suppression/addresses/{EmailAddress}<br>/v2/email/tags<br>/v2/email/account<br>/v2/email/deliverability-dashboard/blacklist-report<br>/v2/email/configuration-sets/ConfigurationSetName<br>/v2/email/configuration-sets/{ConfigurationSetName}/event-destinations<br>/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}<br>/v2/email/contact-lists/{ContactListName}/contacts<br>/v2/email/contact-lists/{ContactListName}<br>/v2/email/contact-lists<br>/v2/email/custom-verification-email-templates/{TemplateName}<br>/v2/email/custom-verification-email-templates<br>/v2/email/dedicated-ips/{IP}<br>/v2/email/dedicated-ips<br>/v2/email/dedicated-ip-pools/{PoolName}<br>/v2/email/dedicated-ip-pools<br>/v2/email/deliverability-dashboard<br>/v2/email/deliverability-dashboard/test-reports/{ReportId}<br>/v2/email/deliverability-dashboard/test-reports<br>/v2/email/deliverability-dashboard/campaigns/{CampaignId}<br>/v2/email/deliverability-dashboard/statistics-report/{Domain}<br>/v2/email/identities/{EmailIdentity}<br>/v2/email/identities<br>/v2/email/identities/{EmailIdentity}/policies<br>/v2/email/templates/{TemplateName}<br>/v2/email/templates<br>/v2/email/import-jobs/{JobId}<br>/v2/email/import-jobs<br>/v2/email/suppression/addresses/{EmailAddress}<br>/v2/email/suppression/addresses<br>/v2/email/configuration-sets<br>/v2/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns<br>/v2/email/tags<br>/v2/email/account/dedicated-ips/warmup<br>/v2/email/account/sending<br>/v2/email/account/suppression<br>/v2/email/account/vdm<br>/v2/email/configuration-sets/{ConfigurationSetName}/delivery-options<br>/v2/email/configuration-sets/{ConfigurationSetName}/reputation-options<br>/v2/email/configuration-sets/{ConfigurationSetName}/sending<br>/v2/email/configuration-sets/{ConfigurationSetName}/suppression-options<br>/v2/email/configuration-sets/{ConfigurationSetName}/tracking-options<br>/v2/email/configuration-sets/{ConfigurationSetName}/vdm-options<br>/v2/email/dedicated-ips/{IP}/pool<br>/v2/email/dedicated-ips/{IP}/warmup<br>/v2/email/deliverability-dashboard<br>/v2/email/identities/{EmailIdentity}/configuration-set<br>/v2/email/identities/{EmailIdentity}/dkim<br>/v1/email/identities/EmailIdentity/dkim/signing<br>/v2/email/identities/{EmailIdentity}/feedback<br>/v2/email/identities/{EmailIdentity}/mail-from<br>/v2/email/suppression/addresses<br>/v2/email/outbound-bulk-emails<br>/v2/email/configuration-sets/{ConfigurationSetName}/eventdestinations/{EventDestinationName}<br>/v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}<br>/v2/email/contact-lists/{ContactListName}<br>/v2/email/custom-verification-email-templates/{TemplateName}<br>/v2/email/identities/{EmailIdentity}/policies/{PolicyName}<br>/v2/email/templates/{TemplateName}<br></strong></i>
         </td>
     </tr>
     <tr>
@@ -887,7 +893,108 @@ For more information about how shortcuts or flow steps works, and how they are g
 
 Description of Custom Flow Steps
 
-*MANUALLY ADD THE DOCUMENTATION OF THESE FLOW STEPS HERE...*
+### Send Email
+
+Sends an email message.
+
+
+<h3>Inputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Label</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Visibility</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>To Addresses</td>
+        <td>email</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            An array that contains the email addresses of the "To" recipients for the email.
+        </td>
+    </tr>
+    <tr>
+        <td>Bcc Addresses</td>
+        <td>email</td>
+        <td>no</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.
+        </td>
+    </tr>
+    <tr>
+        <td>Cc Addresses</td>
+        <td>email</td>
+        <td>no</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            An array that contains the email addresses of the "CC" (carbon copy) recipients for the email
+        </td>
+    </tr>
+    <tr>
+        <td>From Email Address</td>
+        <td>email</td>
+        <td>no</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            The email address to use as the "From" address for the email. The address that you specify has to be verified.
+        </td>
+    </tr>
+    <tr>
+        <td>Message</td>
+        <td>text</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            The body of the message.
+        </td>
+    </tr>
+    <tr>
+        <td>Subject</td>
+        <td>text</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in RFC 2047.
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Outputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>response</td>
+        <td>object</td>
+        <td>
+            Object resulting from the response to the endpoint call.
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 
 </details>

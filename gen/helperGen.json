@@ -690,6 +690,15 @@
             "method": "POST",
             "prefix": "",
             "suffix": "",
+            "url": "/v2/email/outbound-emails",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
             "url": "/v2/email/tags",
             "omittableUrlParts": [
                 "v2"
