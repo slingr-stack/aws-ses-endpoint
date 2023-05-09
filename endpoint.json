@@ -50,7 +50,8 @@
     "ses-helpers.js"
   ],
   "flowSteps": [
-    "apiCallAwsSes"
+    "apiCallAwsSes",
+    "sendEmailAwsSes"
   ],
   "configuration":[
     {
