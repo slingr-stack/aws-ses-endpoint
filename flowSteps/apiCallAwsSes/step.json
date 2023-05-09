@@ -1,0 +1,391 @@
+{
+  "label": "API call to awsSes",
+  "name": "apiCallAwsSes",
+  "category": "integrations",
+  "description": "This flow step will send generic request to awsSes",
+  "inputs": [
+    {
+      "label": "Url",
+      "name": "url",
+      "description": "The method and path to which this endpoint is to send requests in a generic way.",
+      "type": "urlParams",
+      "required": "true",
+      "options": {
+        "type": "dropDown",
+        "possibleValues": [
+            {
+              "label": "POST /v2/email/metrics/batch"
+            },
+            {
+              "label": "POST /v2/email/configuration-sets"
+            },
+            {
+              "label": "POST /v2/email/configuration-sets/{ConfigurationSetName}/event-destinations"
+            },
+            {
+              "label": "POST /v2/email/contact-lists/{ContactListName}/contacts"
+            },
+            {
+              "label": "POST /v2/email/contact-lists"
+            },
+            {
+              "label": "POST /v2/email/custom-verification-email-templates"
+            },
+            {
+              "label": "POST /v2/email/dedicated-ip-pools"
+            },
+            {
+              "label": "POST /v2/email/deliverability-dashboard/test"
+            },
+            {
+              "label": "POST /v2/email/identities"
+            },
+            {
+              "label": "POST /v2/email/identities/{EmailIdentity}/policies/{PolicyName}"
+            },
+            {
+              "label": "POST /v2/email/templates"
+            },
+            {
+              "label": "POST /v2/email/import-jobs"
+            },
+            {
+              "label": "POST /v2/email/vdm/recommendations"
+            },
+            {
+              "label": "POST /v2/email/account/details"
+            },
+            {
+              "label": "POST /v2/email/outbound-custom-verification-emails"
+            },
+            {
+              "label": "POST /v2/email/tags"
+            },
+            {
+              "label": "POST /v2/email/templates/{TemplateName}/render"
+            },
+            {
+              "label": "DELETE /v2/email/configuration-sets/{ConfigurationSetName}"
+            },
+            {
+              "label": "DELETE /v2/email/configuration-sets/{ConfigurationSetName}/eventdestinations/{EventDestinationName}"
+            },
+            {
+              "label": "DELETE /v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}"
+            },
+            {
+              "label": "DELETE /v2/email/contact-lists/{ContactListName}"
+            },
+            {
+              "label": "DELETE /v2/email/custom-verification-email-templates/{TemplateName}"
+            },
+            {
+              "label": "DELETE /v2/email/dedicated-ip-pools/{PoolName}"
+            },
+            {
+              "label": "DELETE /v2/email/identities/{EmailIdentity}"
+            },
+            {
+              "label": "DELETE /v2/email/identities/{EmailIdentity}/policies/{PolicyName}"
+            },
+            {
+              "label": "DELETE /v2/email/templates/{TemplateName}"
+            },
+            {
+              "label": "DELETE /v2/email/suppression/addresses/{EmailAddress}"
+            },
+            {
+              "label": "DELETE /v2/email/tags"
+            },
+            {
+              "label": "GET /v2/email/account"
+            },
+            {
+              "label": "GET /v2/email/deliverability-dashboard/blacklist-report"
+            },
+            {
+              "label": "GET /v2/email/configuration-sets/ConfigurationSetName"
+            },
+            {
+              "label": "GET /v2/email/configuration-sets/{ConfigurationSetName}/event-destinations"
+            },
+            {
+              "label": "GET /v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}"
+            },
+            {
+              "label": "GET /v2/email/contact-lists/{ContactListName}/contacts"
+            },
+            {
+              "label": "GET /v2/email/contact-lists/{ContactListName}"
+            },
+            {
+              "label": "GET /v2/email/contact-lists"
+            },
+            {
+              "label": "GET /v2/email/custom-verification-email-templates/{TemplateName}"
+            },
+            {
+              "label": "GET /v2/email/custom-verification-email-templates"
+            },
+            {
+              "label": "GET /v2/email/dedicated-ips/{IP}"
+            },
+            {
+              "label": "GET /v2/email/dedicated-ips"
+            },
+            {
+              "label": "GET /v2/email/dedicated-ip-pools/{PoolName}"
+            },
+            {
+              "label": "GET /v2/email/dedicated-ip-pools"
+            },
+            {
+              "label": "GET /v2/email/deliverability-dashboard"
+            },
+            {
+              "label": "GET /v2/email/deliverability-dashboard/test-reports/{ReportId}"
+            },
+            {
+              "label": "GET /v2/email/deliverability-dashboard/test-reports"
+            },
+            {
+              "label": "GET /v2/email/deliverability-dashboard/campaigns/{CampaignId}"
+            },
+            {
+              "label": "GET /v2/email/deliverability-dashboard/statistics-report/{Domain}"
+            },
+            {
+              "label": "GET /v2/email/identities/{EmailIdentity}"
+            },
+            {
+              "label": "GET /v2/email/identities"
+            },
+            {
+              "label": "GET /v2/email/identities/{EmailIdentity}/policies"
+            },
+            {
+              "label": "GET /v2/email/templates/{TemplateName}"
+            },
+            {
+              "label": "GET /v2/email/templates"
+            },
+            {
+              "label": "GET /v2/email/import-jobs/{JobId}"
+            },
+            {
+              "label": "GET /v2/email/import-jobs"
+            },
+            {
+              "label": "GET /v2/email/suppression/addresses/{EmailAddress}"
+            },
+            {
+              "label": "GET /v2/email/suppression/addresses"
+            },
+            {
+              "label": "GET /v2/email/configuration-sets"
+            },
+            {
+              "label": "GET /v2/email/deliverability-dashboard/domains/{SubscribedDomain}/campaigns"
+            },
+            {
+              "label": "GET /v2/email/tags"
+            },
+            {
+              "label": "PUT /v2/email/account/dedicated-ips/warmup"
+            },
+            {
+              "label": "PUT /v2/email/account/sending"
+            },
+            {
+              "label": "PUT /v2/email/account/suppression"
+            },
+            {
+              "label": "PUT /v2/email/account/vdm"
+            },
+            {
+              "label": "PUT /v2/email/configuration-sets/{ConfigurationSetName}/delivery-options"
+            },
+            {
+              "label": "PUT /v2/email/configuration-sets/{ConfigurationSetName}/reputation-options"
+            },
+            {
+              "label": "PUT /v2/email/configuration-sets/{ConfigurationSetName}/sending"
+            },
+            {
+              "label": "PUT /v2/email/configuration-sets/{ConfigurationSetName}/suppression-options"
+            },
+            {
+              "label": "PUT /v2/email/configuration-sets/{ConfigurationSetName}/tracking-options"
+            },
+            {
+              "label": "PUT /v2/email/configuration-sets/{ConfigurationSetName}/vdm-options"
+            },
+            {
+              "label": "PUT /v2/email/dedicated-ips/{IP}/pool"
+            },
+            {
+              "label": "PUT /v2/email/dedicated-ips/{IP}/warmup"
+            },
+            {
+              "label": "PUT /v2/email/deliverability-dashboard"
+            },
+            {
+              "label": "PUT /v2/email/identities/{EmailIdentity}/configuration-set"
+            },
+            {
+              "label": "PUT /v2/email/identities/{EmailIdentity}/dkim"
+            },
+            {
+              "label": "PUT /v1/email/identities/EmailIdentity/dkim/signing"
+            },
+            {
+              "label": "PUT /v2/email/identities/{EmailIdentity}/feedback"
+            },
+            {
+              "label": "PUT /v2/email/identities/{EmailIdentity}/mail-from"
+            },
+            {
+              "label": "PUT /v2/email/suppression/addresses"
+            },
+            {
+              "label": "PUT /v2/email/outbound-bulk-emails"
+            },
+            {
+              "label": "PUT /v2/email/configuration-sets/{ConfigurationSetName}/eventdestinations/{EventDestinationName}"
+            },
+            {
+              "label": "PUT /v2/email/contact-lists/{ContactListName}/contacts/{EmailAddress}"
+            },
+            {
+              "label": "PUT /v2/email/contact-lists/{ContactListName}"
+            },
+            {
+              "label": "PUT /v2/email/custom-verification-email-templates/{TemplateName}"
+            },
+            {
+              "label": "PUT /v2/email/identities/{EmailIdentity}/policies/{PolicyName}"
+            },
+            {
+              "label": "PUT /v2/email/templates/{TemplateName}"
+            }
+        ]
+      }
+    },
+    {
+      "label": "Headers",
+      "name": "headers",
+      "description": "Let the client and the server pass additional information with the HTTP request in a key value format. (e.g. key=ABC123)",
+      "type": "keyValue"
+    },
+    {
+      "label": "Query Params",
+      "name": "params",
+      "description": "Parameters attached to the end of a url in a key value format. (e.g. key=ABC123)",
+      "type": "keyValue"
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "type": "json",
+      "description": "Content to be sent to the server.",
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Override Settings",
+      "name": "overrideSettings",
+      "type": "boolean",
+      "description": "If true, allows adding configurations",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Follow Redirects",
+      "name": "followRedirects",
+      "type": "boolean",
+      "description": "Follow the redirects when a HTTP request is executed",
+      "visibility": "config.overrideSettings",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Download",
+      "name": "download",
+      "type": "boolean",
+      "description": "Indicates that the resource has to be downloaded into a file instead of returning it in the response.",
+      "visibility": "config.overrideSettings && config.events != \"fileDownloaded\"",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "File Name",
+      "name": "fileName",
+      "description": "If provided, the file will be stored with this name. If empty the file name will be calculated from the URL.",
+      "visibility": "(config.overrideSettings && config.download) || config.events === \"fileDownloaded\"",
+      "type": "text",
+      "options": {
+        "allowContextSelector": "true"
+      }
+    },
+    {
+      "label": "Full Response",
+      "name": "fullResponse",
+      "type": "boolean",
+      "description": "Include extended information about response",
+      "visibility": "config.overrideSettings",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Connection timeout",
+      "name": "connectionTimeout",
+      "description": "Connect timeout interval, in milliseconds (0 = infinity). Default value: 5000 ms (5 sec)",
+      "visibility": "config.overrideSettings",
+      "type": "text",
+      "defaultValue": "5000",
+      "typeOptions": {
+        "validation": {
+          "function": "!config.connectionTimeout || utils.isPlaceholder(config.connectionTimeout) || utils.getInteger(config.connectionTimeout) >= 0",
+          "message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+        }
+      },
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Read timeout",
+      "name": "readTimeout",
+      "description": "Read timeout interval, in milliseconds (0 = infinity). Default value: 60000 ms (60 sec)",
+      "visibility": "config.overrideSettings",
+      "type": "text",
+      "defaultValue": "60000",
+      "typeOptions": {
+        "validation": {
+          "function": "!config.readTimeout || utils.isPlaceholder(config.readTimeout) || utils.getInteger(config.readTimeout) >= 0",
+          "message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+        }
+      },
+      "options": {
+        "allowContextSelector": "false"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "label": "Response",
+      "name": "response",
+      "type": "object",
+      "description": "The response to external URL"
+    }
+  ]
+}

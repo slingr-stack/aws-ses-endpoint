@@ -28,7 +28,7 @@ import java.util.Map;
  *
  * <p>Created by hpacini on 04/03/19.
  */
-@SlingrEndpoint(name = "aws-ses")
+@SlingrEndpoint(name = "aws-ses", functionPrefix = "_")
 public class AwsSesEndpoint extends HttpEndpoint {
 
     private static final Logger logger = LoggerFactory.getLogger(AwsSesEndpoint.class);
@@ -47,17 +47,15 @@ public class AwsSesEndpoint extends HttpEndpoint {
 
     public AwsSesEndpoint() {
     }
-
+    final String SERVICE_URI = "https://" + SERVICE_NAME + "." + region + ".amazonaws.com";
     @Override
     public String getApiUri() {
-        return null;
+        return  SERVICE_URI;
     }
 
 
     @EndpointFunction(name = "_requestAwsSdk")
     public Json requestAwsSdk(FunctionRequest functionRequest) {
-
-        final String SERVICE_URI = "https://" + SERVICE_NAME + "." + region + ".amazonaws.com";
 
         BasicAWSCredentials awsCredentials = new BasicAWSCredentials(accessKey, secretAccessKey);
 
