@@ -1,0 +1,83 @@
+{
+  "label": "Send Email",
+  "name": "sendEmailAwsSes",
+  "category": "integrations",
+  "description": "Sends an email message.",
+  "inputs": [
+    {
+      "label": "To Addresses",
+      "name": "toAddresses",
+      "type": "text",
+      "description": "An array that contains the email addresses of the \"To\" recipients for the email.",
+      "required": "true",
+      "multiplicity": "many",
+      "options": {
+        "validation": "email",
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Bcc Addresses",
+      "name": "bccAddresses",
+      "type": "text",
+      "description": "An array that contains the email addresses of the \"BCC\" (blind carbon copy) recipients for the email.",
+      "required": "false",
+      "multiplicity": "many",
+      "options": {
+        "validation": "email",
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Cc Addresses",
+      "name": "ccAddresses",
+      "type": "text",
+      "description": "An array that contains the email addresses of the \"CC\" (carbon copy) recipients for the email",
+      "required": "false",
+      "multiplicity": "many",
+      "options": {
+        "validation": "email",
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "From Email Address",
+      "name": "fromEmailAddress",
+      "type": "text",
+      "description": "The email address to use as the \"From\" address for the email. The address that you specify has to be verified.",
+      "required": "false",
+      "options": {
+        "validation": "email",
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Message",
+      "name": "message",
+      "type": "text",
+      "description": "The body of the message.",
+      "required": "true",
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Subject",
+      "name": "subject",
+      "type": "text",
+      "description": "The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in RFC 2047.",
+      "required": "true",
+      "options": {
+        "allowContextSelector": "false"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "label": "Response",
+      "name": "response",
+      "type": "object",
+      "description": "The response to external URL"
+    }
+  ]
+}

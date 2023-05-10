@@ -1,0 +1,780 @@
+{
+    "fileName": "functions",
+    "endpointName": "awsSes",
+    "apiDescriptors": [
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/metrics/batch",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/event-destinations",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists/:ContactListName/contacts",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/custom-verification-email-templates",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/dedicated-ip-pools",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/deliverability-dashboard/test",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity/policies/:PolicyName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/templates",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/import-jobs",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/eventdestinations/:EventDestinationName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists/:ContactListName/contacts/:EmailAddress",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists/:ContactListName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/custom-verification-email-templates/:TemplateName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/dedicated-ip-pools/:PoolName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity/policies/:PolicyName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/templates/:TemplateName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/suppression/addresses/:EmailAddress",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/account",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/deliverability-dashboard/blacklist-report",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/ConfigurationSetName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/event-destinations",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists/:ContactListName/contacts/:EmailAddress ",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists/:ContactListName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/custom-verification-email-templates/:TemplateName ",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/dedicated-ips/:IP",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/dedicated-ip-pools/:PoolName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/dedicated-ips",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/deliverability-dashboard",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/deliverability-dashboard/test-reports/:ReportId",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/deliverability-dashboard/campaigns/:CampaignId",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/deliverability-dashboard/statistics-report/:Domain",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity/policies",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/templates/:TemplateName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/import-jobs/:JobId",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/suppression/addresses/:EmailAddress",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists/:ContactListName/contacts",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/custom-verification-email-templates",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/dedicated-ip-pools",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/deliverability-dashboard/test-reports",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/deliverability-dashboard/domains/:SubscribedDomain/campaigns",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/templates",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/import-jobs",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/vdm/recommendations",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/suppression/addresses",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "GET",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/tags",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/account/dedicated-ips/warmup",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/account/details",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/account/sending ",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/account/suppression",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/account/vdm",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/delivery-options",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/reputation-options",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/sending",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/suppression-options",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/tracking-options",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/vdm-options",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/dedicated-ips/:IP/pool",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/dedicated-ips/:IP/warmup",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/deliverability-dashboard",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity/configuration-set",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity/dkim",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v1/email/identities/EmailIdentity/dkim/signing",
+            "omittableUrlParts": [
+                "v1"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity/feedback",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity/mail-from",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/suppression/addresses",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/outbound-bulk-emails",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/outbound-custom-verification-emails",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/outbound-emails",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/tags",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "POST",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/templates/:TemplateName/render",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "DELETE",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/tags",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/configuration-sets/:ConfigurationSetName/eventdestinations/:EventDestinationName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists/:ContactListName/contacts/:EmailAddress",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/contact-lists/:ContactListName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/custom-verification-email-templates/:TemplateName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/identities/:EmailIdentity/policies/:PolicyName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        },
+        {
+            "method": "PUT",
+            "prefix": "",
+            "suffix": "",
+            "url": "/v2/email/templates/:TemplateName",
+            "omittableUrlParts": [
+                "v2"
+            ]
+        }
+    ]
+}
